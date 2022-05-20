@@ -5,7 +5,9 @@ import Constants from 'expo-constants'
 
 import Header from './Header'
 
-export default () => {
+export default (props) => {
+  const navigation = props.navigation
+
   return(
     <View style={styles.conteiner }>
     <Header/>
@@ -13,19 +15,19 @@ export default () => {
       <Button
         title='SOS'
         color='red'
-        onPress={()=> alert('Cliquem SOS')}
+        onPress={()=> navigation.navigate('listaContatos')}
       />
 
       <Button
         title='Registro'
         color='#24CBAF'
-        onPress={()=> alert('Clique em registro')}
+        onPress={()=> navigation.navigate('sos')}
       />
 
       <Button
         title='Rastreio'
         color='#24CBAF'
-        onPress={()=> alert('Clique em rastreio')}
+        onPress={()=> navigation.navigate('rastreio')}
       />
     </View>
    </View>
