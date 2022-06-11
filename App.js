@@ -1,36 +1,38 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import React from 'react'
+import {View, Text} from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import HomeScreen from './home/HomeScreen.js'
-import ListaContatos from './contatos/ListaContatos.js'
-import Sos from './sos/Sos.js'
-import Dicas from './dicas/Dicas'
+import HomeScreen from './home/HomeScreen'
+import ListaContatosScreen from './contatos/ListaContatosScreen'
+import SosScreen from './sos/SosScreen'
+import RastreioScreen from './rastreio/RastreioScreen'
+import DicasScreen from './dicas/DicasScreen'
+
 
 const Stack = createNativeStackNavigator()
 
-export default () => {
-
-const headerStyle ={
-  title: 'Contatos de emergência',
+const headerStyle = {
   headerTintColor: 'white',
   headerStyle: {
-    backgroundColor:'#24CBAF'
+    backgroundColor: '#24CBAF'
   },
-  headerTitleStyle:{
+  headerTitleStyle: {
     fontWeight: 'bold'
   }
 }
-  return (
-    <NavigationContainer> 
+
+export default () => {
+
+  return(
+    <NavigationContainer>
       <Stack.Navigator screenOptions={headerStyle}>
         <Stack.Screen name="home" component={HomeScreen} options={{headerShown: false}} />
-         <Stack.Screen name="listaContatos" component={ListaContatos} options={{title: 'Contatos de emergência'}} />
-         <Stack.Screen name="sos" component={Sos} options={{title: 'Sos'}} />
-         <Stack.Screen name="rastreio" component={Rastreio} options={{title: 'Rastreio'}} />
-         <Stack.Screen name="dicas" component={Dicas} options={{title: 'Rastreio'}} />
+        <Stack.Screen name="listaContatos" component={ListaContatosScreen} options={{title: 'Lista de contatos'}} />
+        <Stack.Screen name="sos" component={SosScreen} options={{title: 'SOS'}} />
+        <Stack.Screen name='rastreio' component={RastreioScreen} />
+        <Stack.Screen name='dicas' component={DicasScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -1,71 +1,70 @@
-import React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import React from 'react'
+import {View, StyleSheet, Text, Button} from 'react-native'
 
 import Constants from 'expo-constants'
 
 import Header from './Header'
+import CustomButton from './CustomButton'
 
 export default (props) => {
   const navigation = props.navigation
 
   return(
-    <View style={styles.conteiner }>
-    <Header/>
-    <View style={styles.botoes }>
-      <Button
-        title='SOS'
-        color='red'
-        onPress={()=> navigation.navigate('listaContatos')}
-      />
+    <View style={styles.container}>
+      <Header />
+      <View style={styles.botoes}>
+        <CustomButton 
+          title='SOS'
+          color='red'
+          onPress={() => navigation.navigate('listaContatos')}
+        />
 
-      <Button
-        title='Registro'
-        color='#24CBAF'
-        onPress={()=> navigation.navigate('sos')}
-      />
+        <CustomButton 
+          title='REGISTRO'
+          color='#24CBAF'
+          onPress={() => alert('Clique em Registro')}
+        />
 
-      <Button
-        title='Rastreio'
-        color='#24CBAF'
-        onPress={()=> navigation.navigate('rastreio')}
-      />
+        <CustomButton 
+          title='RASTREIO'
+          color='#24CBAF'
+          onPress={() => navigation.navigate('rastreio')}
+        />
+
+        {/* 
+        <Button  
+          title='SOS'
+          color='red'
+          onPress={() => navigation.navigate('listaContatos')}
+        />
+
+        <Button
+          title='REGISTRO'
+          color='#24CBAF'
+          onPress={() => alert('Clique em Registro')}
+        />
+
+        <Button
+          title='RASTREIO'
+          color='#24CBAF'
+          onPress={() => navigation.navigate('rastreio')}
+        />
+        */}
+      </View>
     </View>
-   </View>
   )
 }
 
 const styles = StyleSheet.create({
-  conteiner: {
-    flex:1,
-    // string, tem que usar aspas mesmo sendo hexa e porcentagem
-    //backgroundColor: 'purple',
-    //adaptar ao tamanho da tela do celular
+  container: {
+    flex: 1,
+    //backgroundColor: 'red',
     marginTop: Constants.statusBarHeight
   },
   botoes: {
+    flex: 1,
     justifyContent: 'space-evenly',
-    flex:1,
+    // backgroundColor: 'red',
     padding: 20
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

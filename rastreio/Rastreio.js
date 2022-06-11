@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
-import BotaoCustomizado from '../home/BotaoCustomizado'
+import CustomButton from '../home/CustomButton'
 
 export default ({navigation}) => {
   return (
@@ -11,7 +11,7 @@ export default ({navigation}) => {
       <Text style={[styles.text, styles.verdeClaro]}>
         Sempre que sua resposta apresentar um fator de risco recebera uma orientação em vídeo.
       </Text>
-      <BotaoCustomizado 
+      <CustomButton 
         title='Continuar'
         onPress={() => navigation.navigate('dicas')}
       />

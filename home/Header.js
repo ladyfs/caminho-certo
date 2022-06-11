@@ -1,17 +1,14 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, Button } from 'react-native';
+import React from 'react'
 
-import Constants from 'expo-constants'
+import {View, Text, Image, StyleSheet} from 'react-native'
 
 import logo from '../assets/logo.png'
 
 export default () => {
-  return(
+  return (
     <View style={styles.header}>
-    <Text style={styles.title}>Caminho certo</Text>
-    <Image source={logo} style={styles.image} />
-    
-    
+      <Text style={styles.title}>Caminho Certo</Text>
+      <Image source={logo} style={styles.image} />
     </View>
   )
 }
@@ -32,8 +29,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 100,
-    borderWidth: 0.5,
-    borderColor: 'grey'
+    borderWidth: 1,
+    borderColor: 'white'
   }
-
 })

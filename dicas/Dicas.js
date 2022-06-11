@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {View, Text, Button, Image, StyleSheet} from 'react-native'
 
-import {buscarPorId} from './DicasApi'
+import {buscarTodasDicas, buscarPorId} from './DicasApi'
 
 export default () => {
   const [indice, setIndice] = useState(1)
